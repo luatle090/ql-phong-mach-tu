@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnXoaTrang = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.dgvLoaiBenh = new System.Windows.Forms.DataGridView();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTenLoaiBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnXoaTrang = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -83,25 +83,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
+            // btnXoaTrang
+            // 
+            this.btnXoaTrang.Location = new System.Drawing.Point(317, 23);
+            this.btnXoaTrang.Name = "btnXoaTrang";
+            this.btnXoaTrang.Size = new System.Drawing.Size(74, 21);
+            this.btnXoaTrang.TabIndex = 9;
+            this.btnXoaTrang.Text = "Xóa trắng";
+            this.btnXoaTrang.UseVisualStyleBackColor = true;
+            // 
             // btnCapNhat
             // 
-            this.btnCapNhat.Location = new System.Drawing.Point(557, 23);
+            this.btnCapNhat.Location = new System.Drawing.Point(477, 23);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(74, 21);
             this.btnCapNhat.TabIndex = 6;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
-          
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(477, 23);
+            this.btnXoa.Location = new System.Drawing.Point(557, 23);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(74, 21);
             this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
-            
             // 
             // btnThem
             // 
@@ -111,7 +118,6 @@
             this.btnThem.TabIndex = 8;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
-            
             // 
             // txtTen
             // 
@@ -152,7 +158,6 @@
             this.dgvLoaiBenh.ReadOnly = true;
             this.dgvLoaiBenh.Size = new System.Drawing.Size(644, 370);
             this.dgvLoaiBenh.TabIndex = 0;
-            
             // 
             // ColID
             // 
@@ -168,16 +173,6 @@
             this.ColTenLoaiBenh.HeaderText = "Loại bệnh";
             this.ColTenLoaiBenh.Name = "ColTenLoaiBenh";
             this.ColTenLoaiBenh.ReadOnly = true;
-            // 
-            // btnXoaTrang
-            // 
-            this.btnXoaTrang.Location = new System.Drawing.Point(317, 23);
-            this.btnXoaTrang.Name = "btnXoaTrang";
-            this.btnXoaTrang.Size = new System.Drawing.Size(74, 21);
-            this.btnXoaTrang.TabIndex = 9;
-            this.btnXoaTrang.Text = "Xóa trắng";
-            this.btnXoaTrang.UseVisualStyleBackColor = true;
-            
             // 
             // FrmLoaiBenh
             // 

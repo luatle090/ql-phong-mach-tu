@@ -83,14 +83,14 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(596, 109);
+            this.groupBox1.Size = new System.Drawing.Size(596, 140);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
             // btnXoaTrang
             // 
-            this.btnXoaTrang.Location = new System.Drawing.Point(349, 55);
+            this.btnXoaTrang.Location = new System.Drawing.Point(12, 113);
             this.btnXoaTrang.Name = "btnXoaTrang";
             this.btnXoaTrang.Size = new System.Drawing.Size(74, 21);
             this.btnXoaTrang.TabIndex = 9;
@@ -99,7 +99,7 @@
             // 
             // btnCapNhat
             // 
-            this.btnCapNhat.Location = new System.Drawing.Point(509, 82);
+            this.btnCapNhat.Location = new System.Drawing.Point(172, 113);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(74, 21);
             this.btnCapNhat.TabIndex = 6;
@@ -108,7 +108,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(429, 82);
+            this.btnXoa.Location = new System.Drawing.Point(252, 113);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(74, 21);
             this.btnXoa.TabIndex = 7;
@@ -117,7 +117,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(349, 82);
+            this.btnThem.Location = new System.Drawing.Point(92, 113);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(74, 21);
             this.btnThem.TabIndex = 8;
@@ -129,14 +129,14 @@
             this.txtMoTa.Location = new System.Drawing.Point(90, 50);
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
-            this.txtMoTa.Size = new System.Drawing.Size(246, 53);
+            this.txtMoTa.Size = new System.Drawing.Size(494, 53);
             this.txtMoTa.TabIndex = 1;
             // 
             // txtTen
             // 
             this.txtTen.Location = new System.Drawing.Point(90, 24);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(246, 20);
+            this.txtTen.Size = new System.Drawing.Size(494, 20);
             this.txtTen.TabIndex = 1;
             // 
             // label3
@@ -161,9 +161,9 @@
             // 
             this.groupBox2.Controls.Add(this.dgvCachDung);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 165);
+            this.groupBox2.Location = new System.Drawing.Point(0, 196);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(596, 336);
+            this.groupBox2.Size = new System.Drawing.Size(596, 305);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách cách dùng";
@@ -179,7 +179,7 @@
             this.dgvCachDung.Location = new System.Drawing.Point(3, 16);
             this.dgvCachDung.Name = "dgvCachDung";
             this.dgvCachDung.ReadOnly = true;
-            this.dgvCachDung.Size = new System.Drawing.Size(590, 317);
+            this.dgvCachDung.Size = new System.Drawing.Size(590, 286);
             this.dgvCachDung.TabIndex = 0;
             // 
             // ColId
@@ -196,6 +196,7 @@
             this.ColTenCachDung.HeaderText = "Tên cách dùng";
             this.ColTenCachDung.Name = "ColTenCachDung";
             this.ColTenCachDung.ReadOnly = true;
+            this.ColTenCachDung.Width = 200;
             // 
             // ColMoTa
             // 
@@ -203,6 +204,7 @@
             this.ColMoTa.HeaderText = "Mô tả";
             this.ColMoTa.Name = "ColMoTa";
             this.ColMoTa.ReadOnly = true;
+            this.ColMoTa.Width = 300;
             // 
             // FrmCachDung
             // 
@@ -239,9 +241,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvCachDung;
+        private System.Windows.Forms.Button btnXoaTrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTenCachDung;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMoTa;
-        private System.Windows.Forms.Button btnXoaTrang;
     }
 }

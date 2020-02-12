@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtGia = new System.Windows.Forms.TextBox();
             this.btnXoaTrang = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtGia = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -83,14 +83,21 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(626, 87);
+            this.groupBox1.Size = new System.Drawing.Size(626, 81);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
+            // txtGia
+            // 
+            this.txtGia.Location = new System.Drawing.Point(90, 50);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.Size = new System.Drawing.Size(199, 20);
+            this.txtGia.TabIndex = 11;
+            // 
             // btnXoaTrang
             // 
-            this.btnXoaTrang.Location = new System.Drawing.Point(307, 23);
+            this.btnXoaTrang.Location = new System.Drawing.Point(308, 48);
             this.btnXoaTrang.Name = "btnXoaTrang";
             this.btnXoaTrang.Size = new System.Drawing.Size(75, 22);
             this.btnXoaTrang.TabIndex = 10;
@@ -99,7 +106,7 @@
             // 
             // btnCapNhat
             // 
-            this.btnCapNhat.Location = new System.Drawing.Point(545, 23);
+            this.btnCapNhat.Location = new System.Drawing.Point(466, 48);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(74, 21);
             this.btnCapNhat.TabIndex = 6;
@@ -108,7 +115,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(465, 23);
+            this.btnXoa.Location = new System.Drawing.Point(546, 48);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(74, 21);
             this.btnXoa.TabIndex = 7;
@@ -117,7 +124,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(385, 23);
+            this.btnThem.Location = new System.Drawing.Point(386, 48);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(74, 21);
             this.btnThem.TabIndex = 8;
@@ -153,9 +160,9 @@
             // 
             this.groupBox2.Controls.Add(this.dgvThuoc);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 143);
+            this.groupBox2.Location = new System.Drawing.Point(0, 137);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(626, 369);
+            this.groupBox2.Size = new System.Drawing.Size(626, 375);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách thuốc";
@@ -171,7 +178,7 @@
             this.dgvThuoc.Location = new System.Drawing.Point(3, 16);
             this.dgvThuoc.Name = "dgvThuoc";
             this.dgvThuoc.ReadOnly = true;
-            this.dgvThuoc.Size = new System.Drawing.Size(620, 350);
+            this.dgvThuoc.Size = new System.Drawing.Size(620, 356);
             this.dgvThuoc.TabIndex = 0;
             // 
             // ColID
@@ -195,13 +202,6 @@
             this.ColGia.HeaderText = "Giá";
             this.ColGia.Name = "ColGia";
             this.ColGia.ReadOnly = true;
-            // 
-            // txtGia
-            // 
-            this.txtGia.Location = new System.Drawing.Point(90, 50);
-            this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(199, 20);
-            this.txtGia.TabIndex = 11;
             // 
             // FrmThuoc
             // 

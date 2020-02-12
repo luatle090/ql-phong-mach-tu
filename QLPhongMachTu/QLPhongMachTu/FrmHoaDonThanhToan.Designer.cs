@@ -61,7 +61,8 @@
             this.ColNgayKham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTienKham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTienThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.group.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBenhNhan)).BeginInit();
@@ -83,14 +84,15 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(140, 9);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(344, 31);
+            this.label1.Size = new System.Drawing.Size(724, 56);
             this.label1.TabIndex = 1;
             this.label1.Text = "HÓA ĐƠN THANH TOÁN";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // group
             // 
@@ -130,7 +132,6 @@
             this.dgvBenhNhan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBenhNhan.Size = new System.Drawing.Size(188, 359);
             this.dgvBenhNhan.TabIndex = 3;
-           
             // 
             // ColSTT
             // 
@@ -211,7 +212,6 @@
             this.cboChonNgay.Name = "cboChonNgay";
             this.cboChonNgay.Size = new System.Drawing.Size(176, 21);
             this.cboChonNgay.TabIndex = 5;
-           
             // 
             // label6
             // 
@@ -224,7 +224,8 @@
             // 
             // groupBox2
             // 
-           
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.txtHoTen);
             this.groupBox2.Controls.Add(this.txtNgay);
             this.groupBox2.Controls.Add(this.btnXoa);
@@ -267,7 +268,6 @@
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
-           
             // 
             // btnXuat
             // 
@@ -277,7 +277,6 @@
             this.btnXuat.TabIndex = 1;
             this.btnXuat.Text = "Xuất";
             this.btnXuat.UseVisualStyleBackColor = true;
-            
             // 
             // label5
             // 
@@ -352,7 +351,6 @@
             this.dgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHoaDon.Size = new System.Drawing.Size(524, 321);
             this.dgvHoaDon.TabIndex = 0;
-           
             // 
             // ColSTT2
             // 
@@ -392,9 +390,25 @@
             this.ColTienThuoc.Name = "ColTienThuoc";
             this.ColTienThuoc.ReadOnly = true;
             // 
-            
+            // textBox1
             // 
-            // frmHoaDonThanhToan
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(87, 52);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(147, 20);
+            this.textBox1.TabIndex = 4;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(334, 52);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(135, 20);
+            this.textBox2.TabIndex = 5;
+            // 
+            // FrmHoaDonThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -404,10 +418,8 @@
             this.Controls.Add(this.group);
             this.Controls.Add(this.panel1);
             this.Name = "FrmHoaDonThanhToan";
-            this.Text = "FrmHoaDonThanhToan";
-          
+            this.Text = "HÓA ĐƠN THANH TOÁN";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.group.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBenhNhan)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -455,5 +467,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNgayKham;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTienKham;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTienThuoc;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

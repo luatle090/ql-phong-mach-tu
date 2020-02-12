@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnXoaTrang = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.dgvDVT = new System.Windows.Forms.DataGridView();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnXoaTrang = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -78,40 +78,46 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(632, 62);
+            this.groupBox1.Size = new System.Drawing.Size(632, 83);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
+            // btnXoaTrang
+            // 
+            this.btnXoaTrang.Location = new System.Drawing.Point(15, 56);
+            this.btnXoaTrang.Name = "btnXoaTrang";
+            this.btnXoaTrang.Size = new System.Drawing.Size(74, 21);
+            this.btnXoaTrang.TabIndex = 9;
+            this.btnXoaTrang.Text = "Xóa trắng";
+            this.btnXoaTrang.UseVisualStyleBackColor = true;
+            // 
             // btnCapNhat
             // 
-            this.btnCapNhat.Location = new System.Drawing.Point(545, 23);
+            this.btnCapNhat.Location = new System.Drawing.Point(175, 56);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(74, 21);
             this.btnCapNhat.TabIndex = 6;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
-          
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(465, 23);
+            this.btnXoa.Location = new System.Drawing.Point(255, 56);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(74, 21);
             this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
-            
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(385, 23);
+            this.btnThem.Location = new System.Drawing.Point(95, 56);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(74, 21);
             this.btnThem.TabIndex = 8;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
-          
             // 
             // txtTen
             // 
@@ -133,9 +139,9 @@
             // 
             this.groupBox2.Controls.Add(this.dgvDVT);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 118);
+            this.groupBox2.Location = new System.Drawing.Point(0, 139);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(632, 396);
+            this.groupBox2.Size = new System.Drawing.Size(632, 375);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách đơn vị tính";
@@ -150,9 +156,8 @@
             this.dgvDVT.Location = new System.Drawing.Point(3, 16);
             this.dgvDVT.Name = "dgvDVT";
             this.dgvDVT.ReadOnly = true;
-            this.dgvDVT.Size = new System.Drawing.Size(626, 377);
+            this.dgvDVT.Size = new System.Drawing.Size(626, 356);
             this.dgvDVT.TabIndex = 0;
-          
             // 
             // ColID
             // 
@@ -169,17 +174,7 @@
             this.ColTen.Name = "ColTen";
             this.ColTen.ReadOnly = true;
             // 
-            // btnXoaTrang
-            // 
-            this.btnXoaTrang.Location = new System.Drawing.Point(305, 23);
-            this.btnXoaTrang.Name = "btnXoaTrang";
-            this.btnXoaTrang.Size = new System.Drawing.Size(74, 21);
-            this.btnXoaTrang.TabIndex = 9;
-            this.btnXoaTrang.Text = "Xóa trắng";
-            this.btnXoaTrang.UseVisualStyleBackColor = true;
-            
-            // 
-            // frmDonViTinh
+            // FrmDonViTinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
