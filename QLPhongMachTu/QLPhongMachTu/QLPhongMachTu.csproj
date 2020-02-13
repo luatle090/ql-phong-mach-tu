@@ -99,10 +99,16 @@
     <Compile Include="FrmHoaDonThanhToan.Designer.cs">
       <DependentUpon>FrmHoaDonThanhToan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPhieuKhamBenh.cs">
+    <Compile Include="KhamBenh\FrmDSKhamBenh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPhieuKhamBenh.Designer.cs">
+    <Compile Include="KhamBenh\FrmDSKhamBenh.Designer.cs">
+      <DependentUpon>FrmDSKhamBenh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhamBenh\FrmPhieuKhamBenh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhamBenh\FrmPhieuKhamBenh.Designer.cs">
       <DependentUpon>FrmPhieuKhamBenh.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -134,7 +140,10 @@
     <EmbeddedResource Include="FrmHoaDonThanhToan.resx">
       <DependentUpon>FrmHoaDonThanhToan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPhieuKhamBenh.resx">
+    <EmbeddedResource Include="KhamBenh\FrmDSKhamBenh.resx">
+      <DependentUpon>FrmDSKhamBenh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhamBenh\FrmPhieuKhamBenh.resx">
       <DependentUpon>FrmPhieuKhamBenh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
