@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QLPhongMachTuDAO;
+using QLPhongMachTuBUS;
 using QLPhongMachTuDTO;
 
 namespace QLPhongMachTu.DanhMuc
 {
     public partial class FrmNhanVien : Form
     {
-        NhanVienDAO nvDAO = new NhanVienDAO();
+        private NhanVienBUS nvBUS = new NhanVienBUS();
 
         public FrmNhanVien()
         {
@@ -63,7 +63,7 @@ namespace QLPhongMachTu.DanhMuc
         private void LoadData()
         {
             DataTable dt = new DataTable();
-            dt = nvDAO.LoadDataNhanVien();
+            dt = nvBUS.LoadDataNhanVien();
 
             dgvData.DataSource = dt;
         }
@@ -152,7 +152,7 @@ namespace QLPhongMachTu.DanhMuc
                 gioiTinh = 0;
 
             NhanVienDTO nv = new NhanVienDTO(-1, txtMa.Text, txtHoTen.Text, gioiTinh, txtDiaChi.Text, (int)cboChucVu.SelectedValue, txtUsername.Text, txtPass.Text);
-            long re = nvDAO.Insert(nv);
+            long re = nvBUS.Insert(nv);
             if (re > 0)
             {
                 MessageBox.Show("Thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -183,7 +183,7 @@ namespace QLPhongMachTu.DanhMuc
             int ID = Convert.ToInt32(dgvData.Rows[i].Cells["ColID"].Value.ToString());
 
             NhanVienDTO nv = new NhanVienDTO(ID, txtMa.Text, txtHoTen.Text, gioiTinh, txtDiaChi.Text, (int)cboChucVu.SelectedValue, txtUsername.Text, txtPass.Text);
-            long re = nvDAO.Update(nv);
+            long re = nvBUS.Update(nv);
             if (re > 0)
             {
                 MessageBox.Show("Thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -211,7 +211,7 @@ namespace QLPhongMachTu.DanhMuc
                 int i = dgvData.CurrentRow.Index;
                 int ID = Convert.ToInt32(dgvData.Rows[i].Cells["ColID"].Value.ToString());
 
-                nvDAO.Delete(ID);
+                nvBUS.Delete(ID);
 
                 LoadData();
                 MessageBox.Show("Thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);

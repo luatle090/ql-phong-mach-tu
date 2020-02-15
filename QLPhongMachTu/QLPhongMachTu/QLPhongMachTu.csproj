@@ -168,5 +168,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QLPhongMachTuBUS\QLPhongMachTuBUS.csproj">
+      <Project>{2be6846c-2900-44ed-be96-1f79a4cb6002}</Project>
+      <Name>QLPhongMachTuBUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QLPhongMachTuDTO\QLPhongMachTuDTO.csproj">
+      <Project>{8b72493b-8515-43bb-beaf-c2ee6e83e6c0}</Project>
+      <Name>QLPhongMachTuDTO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
