@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -37,17 +38,17 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtTen = new System.Windows.Forms.TextBox();
+            this.txtTenThuoc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvThuoc = new System.Windows.Forms.DataGridView();
+            this.dgvData = new System.Windows.Forms.DataGridView();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThuoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,14 +62,15 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(145, 9);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(295, 31);
+            this.label1.Size = new System.Drawing.Size(626, 53);
             this.label1.TabIndex = 1;
             this.label1.Text = "DANH SÁCH THUỐC";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox1
             // 
@@ -78,7 +80,7 @@
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtTen);
+            this.groupBox1.Controls.Add(this.txtTenThuoc);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 56);
@@ -94,6 +96,7 @@
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(199, 20);
             this.txtGia.TabIndex = 11;
+            this.txtGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnXoaTrang
             // 
@@ -103,6 +106,7 @@
             this.btnXoaTrang.TabIndex = 10;
             this.btnXoaTrang.Text = "Xóa trắng";
             this.btnXoaTrang.UseVisualStyleBackColor = true;
+            this.btnXoaTrang.Click += new System.EventHandler(this.btnXoaTrang_Click);
             // 
             // btnCapNhat
             // 
@@ -112,6 +116,7 @@
             this.btnCapNhat.TabIndex = 6;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnXoa
             // 
@@ -121,6 +126,7 @@
             this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -130,6 +136,7 @@
             this.btnThem.TabIndex = 8;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label3
             // 
@@ -140,12 +147,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Giá";
             // 
-            // txtTen
+            // txtTenThuoc
             // 
-            this.txtTen.Location = new System.Drawing.Point(90, 24);
-            this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(199, 20);
-            this.txtTen.TabIndex = 1;
+            this.txtTenThuoc.Location = new System.Drawing.Point(90, 24);
+            this.txtTenThuoc.Name = "txtTenThuoc";
+            this.txtTenThuoc.Size = new System.Drawing.Size(199, 20);
+            this.txtTenThuoc.TabIndex = 1;
             // 
             // label2
             // 
@@ -158,7 +165,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dgvThuoc);
+            this.groupBox2.Controls.Add(this.dgvData);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 137);
             this.groupBox2.Name = "groupBox2";
@@ -167,19 +174,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách thuốc";
             // 
-            // dgvThuoc
+            // dgvData
             // 
-            this.dgvThuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID,
             this.ColTenThuoc,
             this.ColGia});
-            this.dgvThuoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvThuoc.Location = new System.Drawing.Point(3, 16);
-            this.dgvThuoc.Name = "dgvThuoc";
-            this.dgvThuoc.ReadOnly = true;
-            this.dgvThuoc.Size = new System.Drawing.Size(620, 356);
-            this.dgvThuoc.TabIndex = 0;
+            this.dgvData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvData.Location = new System.Drawing.Point(3, 16);
+            this.dgvData.Name = "dgvData";
+            this.dgvData.ReadOnly = true;
+            this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvData.Size = new System.Drawing.Size(620, 356);
+            this.dgvData.TabIndex = 0;
             // 
             // ColID
             // 
@@ -199,6 +207,10 @@
             // ColGia
             // 
             this.ColGia.DataPropertyName = "Gia";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = null;
+            this.ColGia.DefaultCellStyle = dataGridViewCellStyle6;
             this.ColGia.HeaderText = "Giá";
             this.ColGia.Name = "ColGia";
             this.ColGia.ReadOnly = true;
@@ -212,13 +224,16 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "FrmThuoc";
-            this.Text = "THUOC";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "DANH SÁCH THUỐC";
+            this.Load += new System.EventHandler(this.FrmThuoc_Load_1);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThuoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -231,16 +246,15 @@
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.TextBox txtTen;
+        private System.Windows.Forms.TextBox txtTenThuoc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgvThuoc;
+        private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.Label label3;
-      
+        private System.Windows.Forms.Button btnXoaTrang;
+        private System.Windows.Forms.TextBox txtGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTenThuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColGia;
-        private System.Windows.Forms.Button btnXoaTrang;
-        private System.Windows.Forms.TextBox txtGia;
     }
 }
