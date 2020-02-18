@@ -15,6 +15,7 @@ namespace QLPhongMachTu.DanhMuc
     public partial class FrmNhanVien : Form
     {
         private NhanVienBUS nvBUS = new NhanVienBUS();
+        NhanVienDTO nvIndex;
 
         public FrmNhanVien()
         {
@@ -68,6 +69,14 @@ namespace QLPhongMachTu.DanhMuc
             dgvData.DataSource = dt;
         }
 
+        private void SetNhanVienIndex(int _id) {
+            int gioiTinh = 1;
+            if (chkNu.Checked)
+                gioiTinh = 0;
+
+            nvIndex = new NhanVienDTO(_id, txtMa.Text, txtHoTen.Text, gioiTinh, txtDiaChi.Text, (int)cboChucVu.SelectedValue, txtUsername.Text, txtPass.Text, cboChucVu.Text, dtpNamSinh.Value.Date);
+        }
+
         private void dgvData_CurrentCellChanged(object sender, EventArgs e)
         {
             if (dgvData.Rows.Count < 1 || dgvData.CurrentCellAddress.Y < 0) return;
@@ -75,18 +84,21 @@ namespace QLPhongMachTu.DanhMuc
             try
             {
                 int i = dgvData.CurrentRow.Index;
+                int id = (int)dgvData.Rows[i].Cells["ColID"].Value;
 
                 txtMa.Text = dgvData.Rows[i].Cells["ColMa"].Value.ToString();
                 txtHoTen.Text = dgvData.Rows[i].Cells["ColHoTen"].Value.ToString();
                 txtDiaChi.Text = dgvData.Rows[i].Cells["ColDiaChi"].Value.ToString();
-                cboChucVu.Text = dgvData.Rows[i].Cells["ColChucVu"].Value.ToString();
+                cboChucVu.SelectedValue = dgvData.Rows[i].Cells["ColIDChucVu"].Value;
             
                 txtUsername.Text = dgvData.Rows[i].Cells["ColUsername"].Value.ToString();
 
-                if (dgvData.Rows[i].Cells["ColGioiTinh"].Value.ToString() == "Nam")
-                    chkNam.Checked = true;
-                else
-                    chkNu.Checked = true;
+                bool gioiTinh = true;
+                if ((int)dgvData.Rows[i].Cells["ColGioiTinh"].Value == 0)
+                    gioiTinh = false;
+
+                chkNam.Checked = gioiTinh;
+           
             }
             catch (Exception ex)
             {
@@ -147,12 +159,9 @@ namespace QLPhongMachTu.DanhMuc
         {
             if (ThieuDuLieu(true)) return;
 
-            int gioiTinh = 1;
-            if (chkNu.Checked)
-                gioiTinh = 0;
+            SetNhanVienIndex(-1);
 
-            NhanVienDTO nv = new NhanVienDTO(-1, txtMa.Text, txtHoTen.Text, gioiTinh, txtDiaChi.Text, (int)cboChucVu.SelectedValue, txtUsername.Text, txtPass.Text);
-            long re = nvBUS.Insert(nv);
+            long re = nvBUS.Insert(nvIndex);
             if (re > 0)
             {
                 MessageBox.Show("Thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -161,7 +170,7 @@ namespace QLPhongMachTu.DanhMuc
             else {
                 if (re == -2)
                 {
-                    MessageBox.Show("Trùng mã", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Trùng mã nhân viên, hoặc username", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                     MessageBox.Show("Không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -175,15 +184,12 @@ namespace QLPhongMachTu.DanhMuc
 
             if (MessageBox.Show("Xác nhận?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.No) return;
 
-            int gioiTinh = 1;
-            if (chkNu.Checked)
-                gioiTinh = 0;
-
             int i = dgvData.CurrentRow.Index;
             int ID = Convert.ToInt32(dgvData.Rows[i].Cells["ColID"].Value.ToString());
 
-            NhanVienDTO nv = new NhanVienDTO(ID, txtMa.Text, txtHoTen.Text, gioiTinh, txtDiaChi.Text, (int)cboChucVu.SelectedValue, txtUsername.Text, txtPass.Text);
-            long re = nvBUS.Update(nv);
+            SetNhanVienIndex(ID);
+
+            long re = nvBUS.Update(nvIndex);
             if (re > 0)
             {
                 MessageBox.Show("Thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -219,6 +225,37 @@ namespace QLPhongMachTu.DanhMuc
             catch (Exception ex)
             {
                 MessageBox.Show("Không thành công!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text.Trim() == "" || txtPass.Text.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng nhập thông tin Username password!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int i = dgvData.CurrentRow.Index;
+            int ID = Convert.ToInt32(dgvData.Rows[i].Cells["ColID"].Value.ToString());
+
+            SetNhanVienIndex(ID);
+
+            long re = nvBUS.UpdatePass(nvIndex);
+
+            if (re > 0)
+            {
+                MessageBox.Show("Thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            }
+            else
+            {
+                if (re == -1 || re == -2)
+                {
+                    MessageBox.Show("Không tồn tại thông tin", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                    MessageBox.Show("Không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

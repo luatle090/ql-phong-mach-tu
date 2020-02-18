@@ -28,6 +28,11 @@ namespace QLPhongMachTuBUS
             return nvDAO.Update(_nv);
         }
 
+        public Int64 UpdatePass(NhanVienDTO _nv)
+        {
+            return nvDAO.UpdatePass(_nv);
+        }
+
         public Int64 Delete(NhanVienDTO _nv)
         {
             return nvDAO.Delete(_nv);

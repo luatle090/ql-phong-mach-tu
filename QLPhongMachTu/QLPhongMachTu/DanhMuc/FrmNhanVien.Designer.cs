@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cboChucVu = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.dtpNamSinh = new System.Windows.Forms.DateTimePicker();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.btnCapNhat = new System.Windows.Forms.Button();
@@ -55,14 +59,13 @@
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColMa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColGioiTinh = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColChkNu = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ColNamSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cboChucVu = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ColIDChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -121,9 +124,37 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Điền thông tin";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(516, 125);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(162, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Cập nhật Username password";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cboChucVu
+            // 
+            this.cboChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboChucVu.FormattingEnabled = true;
+            this.cboChucVu.Location = new System.Drawing.Point(85, 97);
+            this.cboChucVu.Name = "cboChucVu";
+            this.cboChucVu.Size = new System.Drawing.Size(287, 21);
+            this.cboChucVu.TabIndex = 9;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(12, 100);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Chức vụ";
+            // 
             // dtpNamSinh
             // 
-            this.dtpNamSinh.CustomFormat = "yyyy";
+            this.dtpNamSinh.CustomFormat = "dd/MM/yyyy";
             this.dtpNamSinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNamSinh.Location = new System.Drawing.Point(457, 19);
             this.dtpNamSinh.Name = "dtpNamSinh";
@@ -313,13 +344,17 @@
             this.ColMa,
             this.ColHoTen,
             this.ColGioiTinh,
+            this.ColChkNu,
             this.ColNamSinh,
             this.ColDiaChi,
             this.ColChucVu,
-            this.ColUsername});
+            this.ColUsername,
+            this.ColIDChucVu});
             this.dgvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvData.Location = new System.Drawing.Point(3, 16);
             this.dgvData.Name = "dgvData";
+            this.dgvData.ReadOnly = true;
+            this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvData.Size = new System.Drawing.Size(678, 254);
             this.dgvData.TabIndex = 0;
             // 
@@ -328,6 +363,7 @@
             this.ColID.DataPropertyName = "ID";
             this.ColID.HeaderText = "ID";
             this.ColID.Name = "ColID";
+            this.ColID.ReadOnly = true;
             this.ColID.Visible = false;
             // 
             // ColMa
@@ -335,68 +371,71 @@
             this.ColMa.DataPropertyName = "Ma";
             this.ColMa.HeaderText = "Mã nhân viên";
             this.ColMa.Name = "ColMa";
+            this.ColMa.ReadOnly = true;
             // 
             // ColHoTen
             // 
             this.ColHoTen.DataPropertyName = "HoTen";
             this.ColHoTen.HeaderText = "Họ tên";
             this.ColHoTen.Name = "ColHoTen";
+            this.ColHoTen.ReadOnly = true;
             // 
             // ColGioiTinh
             // 
-            this.ColGioiTinh.DataPropertyName = "GioiTinh";
-            this.ColGioiTinh.HeaderText = "Giới tính";
+            this.ColGioiTinh.DataPropertyName = "Nam";
+            this.ColGioiTinh.HeaderText = "Nam";
             this.ColGioiTinh.Name = "ColGioiTinh";
+            this.ColGioiTinh.ReadOnly = true;
+            this.ColGioiTinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColGioiTinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColGioiTinh.Width = 70;
+            // 
+            // ColChkNu
+            // 
+            this.ColChkNu.DataPropertyName = "Nu";
+            this.ColChkNu.HeaderText = "Nữ";
+            this.ColChkNu.Name = "ColChkNu";
+            this.ColChkNu.ReadOnly = true;
+            this.ColChkNu.Width = 70;
             // 
             // ColNamSinh
             // 
-            this.ColNamSinh.DataPropertyName = "NamSinh";
-            this.ColNamSinh.HeaderText = "Năm sinh";
+            this.ColNamSinh.DataPropertyName = "NgaySinh";
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle2.NullValue = null;
+            this.ColNamSinh.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ColNamSinh.HeaderText = "Ngày sinh";
             this.ColNamSinh.Name = "ColNamSinh";
+            this.ColNamSinh.ReadOnly = true;
             // 
             // ColDiaChi
             // 
             this.ColDiaChi.DataPropertyName = "DiaChi";
             this.ColDiaChi.HeaderText = "Địa chỉ";
             this.ColDiaChi.Name = "ColDiaChi";
+            this.ColDiaChi.ReadOnly = true;
             // 
             // ColChucVu
             // 
             this.ColChucVu.DataPropertyName = "ChucVu";
             this.ColChucVu.HeaderText = "Chức vụ";
             this.ColChucVu.Name = "ColChucVu";
+            this.ColChucVu.ReadOnly = true;
             // 
             // ColUsername
             // 
+            this.ColUsername.DataPropertyName = "Username";
             this.ColUsername.HeaderText = "Username";
             this.ColUsername.Name = "ColUsername";
+            this.ColUsername.ReadOnly = true;
             // 
-            // label8
+            // ColIDChucVu
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 100);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Chức vụ";
-            // 
-            // cboChucVu
-            // 
-            this.cboChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboChucVu.FormattingEnabled = true;
-            this.cboChucVu.Location = new System.Drawing.Point(85, 97);
-            this.cboChucVu.Name = "cboChucVu";
-            this.cboChucVu.Size = new System.Drawing.Size(287, 21);
-            this.cboChucVu.TabIndex = 9;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(516, 125);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Cập nhật Username password";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ColIDChucVu.DataPropertyName = "IDChucVu";
+            this.ColIDChucVu.HeaderText = "IDChucVu";
+            this.ColIDChucVu.Name = "ColIDChucVu";
+            this.ColIDChucVu.ReadOnly = true;
+            this.ColIDChucVu.Visible = false;
             // 
             // FrmNhanVien
             // 
@@ -449,16 +488,18 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpNamSinh;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cboChucVu;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMa;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColHoTen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColGioiTinh;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColGioiTinh;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColChkNu;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNamSinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColDiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColChucVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColUsername;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cboChucVu;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColIDChucVu;
     }
 }
