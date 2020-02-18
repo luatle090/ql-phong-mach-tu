@@ -90,7 +90,7 @@ namespace QLPhongMachTu.DanhMuc
                 txtHoTen.Text = dgvData.Rows[i].Cells["ColHoTen"].Value.ToString();
                 txtDiaChi.Text = dgvData.Rows[i].Cells["ColDiaChi"].Value.ToString();
                 cboChucVu.SelectedValue = dgvData.Rows[i].Cells["ColIDChucVu"].Value;
-            
+                dtpNamSinh.Value = (DateTime)dgvData.Rows[i].Cells["ColNamSinh"].Value;
                 txtUsername.Text = dgvData.Rows[i].Cells["ColUsername"].Value.ToString();
 
                 bool gioiTinh = true;
@@ -98,7 +98,7 @@ namespace QLPhongMachTu.DanhMuc
                     gioiTinh = false;
 
                 chkNam.Checked = gioiTinh;
-           
+            
             }
             catch (Exception ex)
             {
