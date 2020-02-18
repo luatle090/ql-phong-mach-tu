@@ -1,0 +1,1 @@
+Alter table NhanVien Add ChucVuText nvarchar(50);
