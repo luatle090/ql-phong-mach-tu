@@ -18,6 +18,27 @@ namespace QLPhongMachTuDAO
             return db.ReadDataNoParam("SP_ReadBenhNhan", 100);
         }
 
+        public BenhNhanDTO GetBenhNhan(string maBN)
+        {
+            DataProvider db = new DataProvider();
+            DataTable dt = new DataTable();
+            dt = db.ReadDataAddPram("SP_ReadBenhNhan_ByMa", new string[1] { "@ma"}, new object[1] { maBN} , 100);
+
+            BenhNhanDTO bn = new BenhNhanDTO();
+
+            if (dt.Rows.Count > 0 )
+            {
+                bn.id = Convert.ToInt16(dt.Rows[0]["ID"]);
+                bn.ma = dt.Rows[0]["Ma"].ToString();
+                bn.hoTen = dt.Rows[0]["HoTen"].ToString();
+                bn.gioiTinh = Convert.ToInt16(dt.Rows[0]["Nam"]);
+                bn.diaChi = dt.Rows[0]["DiaChi"].ToString();
+                bn.ngaySinh = Convert.ToDateTime(dt.Rows[0]["NgaySinh"].ToString());
+            }
+
+            return bn;   
+        }
+
         public Int64 Insert(BenhNhanDTO _nv)
         {
             string[] str = new string[5];

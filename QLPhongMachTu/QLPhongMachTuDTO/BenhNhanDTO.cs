@@ -22,8 +22,8 @@ namespace QLPhongMachTuDTO
             this.hoTen = "";
             this.gioiTinh = 1;
             this.diaChi = "";
-            //this.namSinh = 2000;
-           
+            //this.ngaySinh = 2000;
+
         }
 
         public BenhNhanDTO(int _id, string _ma, string _hoTen, int _gioiTinh, string _diaChi, DateTime _namSinh)

@@ -6,34 +6,33 @@ using System.Threading.Tasks;
 using System.Data;
 using QLPhongMachTuDAO;
 using QLPhongMachTuDTO;
-
 namespace QLPhongMachTuBUS
 {
-    public class BenhNhanBUS
+    public class DSKhamBenhBUS
     {
-        BenhNhanDAO nvDAO = new BenhNhanDAO();
+        DSKhamBenhDAO nvDAO = new DSKhamBenhDAO();
 
-        public DataTable LoadData()
+        public DataTable LoadData(DateTime _time, bool _isAll)
         {
-            return nvDAO.LoadData();
+            return nvDAO.LoadData(_time, _isAll);
         }
 
-        public BenhNhanDTO GetBenhNhan(string maBN)
+        public int SoLuongKhamTrongNgay(DateTime _time)
         {
-            return nvDAO.GetBenhNhan(maBN);
+            return nvDAO.SoLuongKhamTrongNgay(_time);
         }
 
-        public Int64 Insert(BenhNhanDTO _nv)
+        public Int64 Insert(DSKhamBenhDTO _nv)
         {
             return nvDAO.Insert(_nv);
         }
 
-        public Int64 Update(BenhNhanDTO _nv)
+        public Int64 Update(DSKhamBenhDTO _nv)
         {
             return nvDAO.Update(_nv);
         }
 
-        public Int64 Delete(BenhNhanDTO _nv)
+        public Int64 Delete(DSKhamBenhDTO _nv)
         {
             return nvDAO.Delete(_nv.id);
         }
