@@ -11,7 +11,7 @@ namespace Provider
 {
     public static class ConnectConfig
     {
-        public static String dbServer = @".\SQLEXPRESS";
+        public static String dbServer = @".\SQL2014EXPRESS";
         public static String dbName = "QLPhongMachTu";
         public static String username = "sa";
         public static String pass = "123";   
