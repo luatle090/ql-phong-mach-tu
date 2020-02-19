@@ -57,6 +57,12 @@
     <Compile Include="DanhMuc\FrmCachDung.Designer.cs">
       <DependentUpon>FrmCachDung.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhMuc\FrmConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhMuc\FrmConfig.Designer.cs">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\FrmDonViTinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     <EmbeddedResource Include="DanhMuc\FrmCachDung.resx">
       <DependentUpon>FrmCachDung.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DanhMuc\FrmConfig.resx">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\FrmDonViTinh.resx">
       <DependentUpon>FrmDonViTinh.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +181,10 @@
     <ProjectReference Include="..\QLPhongMachTuBUS\QLPhongMachTuBUS.csproj">
       <Project>{2be6846c-2900-44ed-be96-1f79a4cb6002}</Project>
       <Name>QLPhongMachTuBUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QLPhongMachTuDAO\QLPhongMachTuDAO.csproj">
+      <Project>{e55a0e7f-3653-4d4e-bfc1-bfd14011dccb}</Project>
+      <Name>QLPhongMachTuDAO</Name>
     </ProjectReference>
     <ProjectReference Include="..\QLPhongMachTuDTO\QLPhongMachTuDTO.csproj">
       <Project>{8b72493b-8515-43bb-beaf-c2ee6e83e6c0}</Project>
