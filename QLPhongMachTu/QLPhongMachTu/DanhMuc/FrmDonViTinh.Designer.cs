@@ -38,13 +38,13 @@
             this.txtTen = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvDVT = new System.Windows.Forms.DataGridView();
+            this.dgvData = new System.Windows.Forms.DataGridView();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDVT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,36 +88,40 @@
             this.btnXoaTrang.Location = new System.Drawing.Point(15, 56);
             this.btnXoaTrang.Name = "btnXoaTrang";
             this.btnXoaTrang.Size = new System.Drawing.Size(74, 21);
-            this.btnXoaTrang.TabIndex = 9;
+            this.btnXoaTrang.TabIndex = 0;
             this.btnXoaTrang.Text = "Xóa trắng";
             this.btnXoaTrang.UseVisualStyleBackColor = true;
+            this.btnXoaTrang.Click += new System.EventHandler(this.btnXoaTrang_Click);
             // 
             // btnCapNhat
             // 
             this.btnCapNhat.Location = new System.Drawing.Point(175, 56);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(74, 21);
-            this.btnCapNhat.TabIndex = 6;
+            this.btnCapNhat.TabIndex = 3;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.Location = new System.Drawing.Point(255, 56);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(74, 21);
-            this.btnXoa.TabIndex = 7;
+            this.btnXoa.TabIndex = 4;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
             this.btnThem.Location = new System.Drawing.Point(95, 56);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(74, 21);
-            this.btnThem.TabIndex = 8;
+            this.btnThem.TabIndex = 2;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtTen
             // 
@@ -137,7 +141,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dgvDVT);
+            this.groupBox2.Controls.Add(this.dgvData);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 139);
             this.groupBox2.Name = "groupBox2";
@@ -146,18 +150,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách đơn vị tính";
             // 
-            // dgvDVT
+            // dgvData
             // 
-            this.dgvDVT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDVT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID,
             this.ColTen});
-            this.dgvDVT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDVT.Location = new System.Drawing.Point(3, 16);
-            this.dgvDVT.Name = "dgvDVT";
-            this.dgvDVT.ReadOnly = true;
-            this.dgvDVT.Size = new System.Drawing.Size(626, 356);
-            this.dgvDVT.TabIndex = 0;
+            this.dgvData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvData.Location = new System.Drawing.Point(3, 16);
+            this.dgvData.Name = "dgvData";
+            this.dgvData.ReadOnly = true;
+            this.dgvData.Size = new System.Drawing.Size(626, 356);
+            this.dgvData.TabIndex = 0;
             // 
             // ColID
             // 
@@ -183,6 +187,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "FrmDonViTinh";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DON VI TINH";
             this.Load += new System.EventHandler(this.FrmDonViTinh_Load);
             this.panel1.ResumeLayout(false);
@@ -190,7 +196,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDVT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -206,7 +212,7 @@
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgvDVT;
+        private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTen;
         private System.Windows.Forms.Button btnXoaTrang;

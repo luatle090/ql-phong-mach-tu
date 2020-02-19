@@ -40,14 +40,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvCachDung = new System.Windows.Forms.DataGridView();
+            this.dgvData = new System.Windows.Forms.DataGridView();
             this.ColId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTenCachDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCachDung)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,36 +93,40 @@
             this.btnXoaTrang.Location = new System.Drawing.Point(12, 113);
             this.btnXoaTrang.Name = "btnXoaTrang";
             this.btnXoaTrang.Size = new System.Drawing.Size(74, 21);
-            this.btnXoaTrang.TabIndex = 9;
+            this.btnXoaTrang.TabIndex = 0;
             this.btnXoaTrang.Text = "Xóa trắng";
             this.btnXoaTrang.UseVisualStyleBackColor = true;
+            this.btnXoaTrang.Click += new System.EventHandler(this.btnXoaTrang_Click);
             // 
             // btnCapNhat
             // 
             this.btnCapNhat.Location = new System.Drawing.Point(172, 113);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(74, 21);
-            this.btnCapNhat.TabIndex = 6;
+            this.btnCapNhat.TabIndex = 4;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.Location = new System.Drawing.Point(252, 113);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(74, 21);
-            this.btnXoa.TabIndex = 7;
+            this.btnXoa.TabIndex = 5;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
             this.btnThem.Location = new System.Drawing.Point(92, 113);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(74, 21);
-            this.btnThem.TabIndex = 8;
+            this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtMoTa
             // 
@@ -130,7 +134,7 @@
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(494, 53);
-            this.txtMoTa.TabIndex = 1;
+            this.txtMoTa.TabIndex = 2;
             // 
             // txtTen
             // 
@@ -159,7 +163,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dgvCachDung);
+            this.groupBox2.Controls.Add(this.dgvData);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 196);
             this.groupBox2.Name = "groupBox2";
@@ -168,19 +172,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách cách dùng";
             // 
-            // dgvCachDung
+            // dgvData
             // 
-            this.dgvCachDung.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCachDung.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColId,
             this.ColTenCachDung,
             this.ColMoTa});
-            this.dgvCachDung.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCachDung.Location = new System.Drawing.Point(3, 16);
-            this.dgvCachDung.Name = "dgvCachDung";
-            this.dgvCachDung.ReadOnly = true;
-            this.dgvCachDung.Size = new System.Drawing.Size(590, 286);
-            this.dgvCachDung.TabIndex = 0;
+            this.dgvData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvData.Location = new System.Drawing.Point(3, 16);
+            this.dgvData.Name = "dgvData";
+            this.dgvData.ReadOnly = true;
+            this.dgvData.Size = new System.Drawing.Size(590, 286);
+            this.dgvData.TabIndex = 0;
             // 
             // ColId
             // 
@@ -215,6 +219,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "FrmCachDung";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CACH DUNG";
             this.Load += new System.EventHandler(this.FrmCachDung_Load_1);
             this.panel1.ResumeLayout(false);
@@ -222,7 +228,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCachDung)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -240,7 +246,7 @@
         private System.Windows.Forms.TextBox txtMoTa;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgvCachDung;
+        private System.Windows.Forms.DataGridView dgvData;
         private System.Windows.Forms.Button btnXoaTrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTenCachDung;
