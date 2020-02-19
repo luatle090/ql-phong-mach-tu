@@ -41,10 +41,10 @@ namespace QLPhongMachTu.DanhMuc
             admin[1] = "Admin";
             tb.Rows.Add(admin);
 
-            DataRow nhanvien = tb.NewRow();
-            nhanvien[0] = "2";
-            nhanvien[1] = "Nhân viên";
-            tb.Rows.Add(nhanvien);
+            //DataRow nhanvien = tb.NewRow();
+            //nhanvien[0] = "2";
+            //nhanvien[1] = "Nhân viên";
+            //tb.Rows.Add(nhanvien);
 
             DataRow bacsi = tb.NewRow();
             bacsi[0] = "3";

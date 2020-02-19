@@ -26,6 +26,7 @@ namespace QLPhongMachTu.DanhMuc
         private void FrmBenhNhan_Load(object sender, EventArgs e)
         {
             LoadData();
+
            
             this.dgvData.CurrentCellChanged += new System.EventHandler(this.dgvData_CurrentCellChanged);
         }

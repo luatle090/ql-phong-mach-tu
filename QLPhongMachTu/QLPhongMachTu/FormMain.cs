@@ -82,5 +82,12 @@ namespace QLPhongMachTu
             FrmBaoCao frm = new FrmBaoCao();
             frm.ShowDialog();
         }
+
+        private void mnuCaiDat_Click(object sender, EventArgs e)
+        {
+
+            FrmConfig frm = new FrmConfig();
+            frm.ShowDialog();
+        }
     }
 }
