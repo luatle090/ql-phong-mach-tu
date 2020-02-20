@@ -44,6 +44,9 @@
             this.mnuPhieuKhamBenh = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHoaDonThanhToan = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBaoCao = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDSBenhNhanKhamBenh = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDoanhThu = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSuDungThuoc = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHeThong = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCaiDat = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDangNhap = new System.Windows.Forms.ToolStripMenuItem();
@@ -165,10 +168,32 @@
             // 
             // mnuBaoCao
             // 
+            this.mnuBaoCao.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuDSBenhNhanKhamBenh,
+            this.mnuDoanhThu,
+            this.mnuSuDungThuoc});
             this.mnuBaoCao.Name = "mnuBaoCao";
             this.mnuBaoCao.Size = new System.Drawing.Size(61, 20);
             this.mnuBaoCao.Text = "Báo cáo";
-            this.mnuBaoCao.Click += new System.EventHandler(this.mnuBaoCao_Click);
+            // 
+            // mnuDSBenhNhanKhamBenh
+            // 
+            this.mnuDSBenhNhanKhamBenh.Name = "mnuDSBenhNhanKhamBenh";
+            this.mnuDSBenhNhanKhamBenh.Size = new System.Drawing.Size(230, 22);
+            this.mnuDSBenhNhanKhamBenh.Text = "Danh sách bệnh nhân";
+            this.mnuDSBenhNhanKhamBenh.Click += new System.EventHandler(this.mnuDSBenhNhanKhamBenh_Click);
+            // 
+            // mnuDoanhThu
+            // 
+            this.mnuDoanhThu.Name = "mnuDoanhThu";
+            this.mnuDoanhThu.Size = new System.Drawing.Size(230, 22);
+            this.mnuDoanhThu.Text = "Báo cáo doanh thu theo ngày";
+            // 
+            // mnuSuDungThuoc
+            // 
+            this.mnuSuDungThuoc.Name = "mnuSuDungThuoc";
+            this.mnuSuDungThuoc.Size = new System.Drawing.Size(230, 22);
+            this.mnuSuDungThuoc.Text = "Báo cáo sử dụng thuốc";
             // 
             // mnuHeThong
             // 
@@ -183,20 +208,20 @@
             // mnuCaiDat
             // 
             this.mnuCaiDat.Name = "mnuCaiDat";
-            this.mnuCaiDat.Size = new System.Drawing.Size(180, 22);
+            this.mnuCaiDat.Size = new System.Drawing.Size(132, 22);
             this.mnuCaiDat.Text = "Cài đặt";
             this.mnuCaiDat.Click += new System.EventHandler(this.mnuCaiDat_Click);
             // 
             // mnuDangNhap
             // 
             this.mnuDangNhap.Name = "mnuDangNhap";
-            this.mnuDangNhap.Size = new System.Drawing.Size(180, 22);
+            this.mnuDangNhap.Size = new System.Drawing.Size(132, 22);
             this.mnuDangNhap.Text = "Đăng nhập";
             // 
             // mnuDangXuat
             // 
             this.mnuDangXuat.Name = "mnuDangXuat";
-            this.mnuDangXuat.Size = new System.Drawing.Size(180, 22);
+            this.mnuDangXuat.Size = new System.Drawing.Size(132, 22);
             this.mnuDangXuat.Text = "Đăng xuất";
             // 
             // FormMain
@@ -241,6 +266,9 @@
         private System.Windows.Forms.ToolStripMenuItem mnuDangXuat;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem mnuNhanVien;
+        private System.Windows.Forms.ToolStripMenuItem mnuDSBenhNhanKhamBenh;
+        private System.Windows.Forms.ToolStripMenuItem mnuDoanhThu;
+        private System.Windows.Forms.ToolStripMenuItem mnuSuDungThuoc;
     }
 }
 

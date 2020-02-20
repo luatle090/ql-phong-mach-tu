@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCao\FrmDSBenhNhanKhamTheoNgay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\FrmDSBenhNhanKhamTheoNgay.Designer.cs">
+      <DependentUpon>FrmDSBenhNhanKhamTheoNgay.cs</DependentUpon>
+    </Compile>
     <Compile Include="DanhMuc\FrmBenhNhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,10 +99,10 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBaoCao.cs">
+    <Compile Include="BaoCao\FrmBaoCao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBaoCao.Designer.cs">
+    <Compile Include="BaoCao\FrmBaoCao.Designer.cs">
       <DependentUpon>FrmBaoCao.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmHoaDonThanhToan.cs">
@@ -119,6 +125,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BaoCao\FrmDSBenhNhanKhamTheoNgay.resx">
+      <DependentUpon>FrmDSBenhNhanKhamTheoNgay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DanhMuc\FrmBenhNhan.resx">
       <DependentUpon>FrmBenhNhan.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,7 +152,7 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBaoCao.resx">
+    <EmbeddedResource Include="BaoCao\FrmBaoCao.resx">
       <DependentUpon>FrmBaoCao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHoaDonThanhToan.resx">

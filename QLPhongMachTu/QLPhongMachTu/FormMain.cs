@@ -89,5 +89,11 @@ namespace QLPhongMachTu
             FrmConfig frm = new FrmConfig();
             frm.ShowDialog();
         }
+
+        private void mnuDSBenhNhanKhamBenh_Click(object sender, EventArgs e)
+        {
+            FrmDSBenhNhanKhamTheoNgay frm = new FrmDSBenhNhanKhamTheoNgay();
+            frm.ShowDialog();
+        }
     }
 }

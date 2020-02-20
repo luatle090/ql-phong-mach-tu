@@ -44,10 +44,12 @@
     <Compile Include="BenhNhanDAO.cs" />
     <Compile Include="CachDungDAO.cs" />
     <Compile Include="ConfigDAO.cs" />
+    <Compile Include="CTThuocKhamDAO.cs" />
     <Compile Include="DonViTinhDAO.cs" />
     <Compile Include="DSKhamBenhDAO.cs" />
     <Compile Include="LoaiBenhDAO.cs" />
     <Compile Include="NhanVienDAO.cs" />
+    <Compile Include="PhieuKhamBenhDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThuocDAO.cs" />
   </ItemGroup>
