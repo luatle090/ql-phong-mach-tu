@@ -67,5 +67,15 @@ namespace QLPhongMachTuBUS
             DataProvider dp = new DataProvider();
             return dp.WriteDataAddParam("SP_DeletePhieuKhamBenh", new string[1] { "@id" }, new object[1] { _id }, 50);
         }
+
+        //
+        public decimal TinhTienThuoc(Int64 _id)
+        {
+            DataProvider dp = new DataProvider();
+            DataTable dt = new DataTable();
+            dt = dp.ReadDataAddPram("SP_TinhTienThuoc_IDPhieu", new string[1] { "@idPhieu" }, new object[1] { _id }, 100);
+
+            return Convert.ToDecimal(dt.Rows[0]["TienThuoc"].ToString());
+        }
     }
 }

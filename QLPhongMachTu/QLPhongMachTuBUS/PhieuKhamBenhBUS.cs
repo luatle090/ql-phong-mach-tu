@@ -36,5 +36,10 @@ namespace QLPhongMachTuBUS
         {
             return nvDAO.Delete(_id);
         }
+
+        public decimal TinhTienThuoc(Int64 _id)
+        {
+            return nvDAO.TinhTienThuoc(_id);
+        }
     }
 }
