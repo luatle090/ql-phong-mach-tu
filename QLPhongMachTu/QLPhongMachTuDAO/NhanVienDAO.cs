@@ -95,5 +95,11 @@ namespace QLPhongMachTuDAO
             DataProvider dp = new DataProvider();
             return dp.WriteDataAddParam("SP_DeleteNhanVien", new string[1] { "@id" }, new object[1] { _idNhanVien }, 50);
         }
+
+        public DataTable DangNhap(string _username, string _password)
+        {
+            DataProvider dp = new DataProvider();
+            return dp.ReadDataAddPram("SP_ReadLogin", new string[2] { "@username", "@pass" }, new object[2] { _username, _password }, 50);
+        }
     }
 }

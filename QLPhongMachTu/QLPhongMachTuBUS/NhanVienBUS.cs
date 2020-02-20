@@ -42,5 +42,10 @@ namespace QLPhongMachTuBUS
         {
             return nvDAO.Delete(_idNhanVien);
         }
+
+        public DataTable DangNhap(string _username, string password)
+        {
+            return nvDAO.DangNhap(_username, password);
+        }
     }
 }
