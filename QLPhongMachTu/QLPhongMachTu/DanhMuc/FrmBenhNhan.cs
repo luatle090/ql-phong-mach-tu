@@ -66,7 +66,10 @@ namespace QLPhongMachTu.DanhMuc
                 if ((int)dgvData.Rows[i].Cells["ColGioiTinh"].Value == 0)
                     gioiTinh = false;
 
-                chkNam.Checked = gioiTinh;
+                if (gioiTinh)
+                    chkNam.Checked = true;
+                else
+                    chkNu.Checked = true;
 
             }
             catch (Exception ex)

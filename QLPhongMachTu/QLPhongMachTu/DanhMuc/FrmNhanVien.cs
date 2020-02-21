@@ -97,7 +97,10 @@ namespace QLPhongMachTu.DanhMuc
                 if ((int)dgvData.Rows[i].Cells["ColGioiTinh"].Value == 0)
                     gioiTinh = false;
 
-                chkNam.Checked = gioiTinh;
+                if (gioiTinh)
+                    chkNam.Checked = true;
+                else
+                    chkNu.Checked = true;
             
             }
             catch (Exception ex)
@@ -252,7 +255,7 @@ namespace QLPhongMachTu.DanhMuc
             {
                 if (re == -1 || re == -2)
                 {
-                    MessageBox.Show("Không tồn tại thông tin", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Username không được thay đổi", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                     MessageBox.Show("Không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
