@@ -37,6 +37,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtpNgayThanhToan = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.group = new System.Windows.Forms.GroupBox();
             this.dgvPhieuKham = new System.Windows.Forms.DataGridView();
@@ -69,8 +71,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.dtpNgayThanhToan = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
             this.ColSTT2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColHoTen2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNgayKham = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,6 +95,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(724, 59);
             this.panel1.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(12, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Ngày thanh toán";
+            // 
+            // dtpNgayThanhToan
+            // 
+            this.dtpNgayThanhToan.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayThanhToan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayThanhToan.Location = new System.Drawing.Point(15, 22);
+            this.dtpNgayThanhToan.Name = "dtpNgayThanhToan";
+            this.dtpNgayThanhToan.Size = new System.Drawing.Size(100, 20);
+            this.dtpNgayThanhToan.TabIndex = 9;
+            this.dtpNgayThanhToan.ValueChanged += new System.EventHandler(this.dtpNgayThanhToan_ValueChanged);
             // 
             // label1
             // 
@@ -313,6 +332,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(87, 24);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -441,25 +461,6 @@
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvData.Size = new System.Drawing.Size(477, 321);
             this.dgvData.TabIndex = 0;
-            // 
-            // dtpNgayThanhToan
-            // 
-            this.dtpNgayThanhToan.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayThanhToan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayThanhToan.Location = new System.Drawing.Point(15, 22);
-            this.dtpNgayThanhToan.Name = "dtpNgayThanhToan";
-            this.dtpNgayThanhToan.Size = new System.Drawing.Size(100, 20);
-            this.dtpNgayThanhToan.TabIndex = 9;
-            this.dtpNgayThanhToan.ValueChanged += new System.EventHandler(this.dtpNgayThanhToan_ValueChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 13);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Ngày thanh toán";
             // 
             // ColSTT2
             // 
