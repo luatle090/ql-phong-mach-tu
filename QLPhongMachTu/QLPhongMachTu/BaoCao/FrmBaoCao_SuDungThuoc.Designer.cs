@@ -1,6 +1,6 @@
 ﻿namespace QLPhongMachTu
 {
-    partial class FrmBaoCao
+    partial class FrmBaoCao_SuDungThuoc
     {
         /// <summary>
         /// Required designer variable.
@@ -66,7 +66,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(584, 60);
             this.label1.TabIndex = 1;
-            this.label1.Text = "BÁO CÁO DOANH THU";
+            this.label1.Text = "BÁO CÁO SỬ DỤNG THUỐC";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -113,29 +113,29 @@
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "NgayKham";
-            this.Column2.HeaderText = "Ngày";
+            this.Column2.DataPropertyName = "TenThuoc";
+            this.Column2.HeaderText = "Tên thuốc";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "SoBenhNhan";
-            this.Column3.HeaderText = "Số bệnh nhân";
+            this.Column3.DataPropertyName = "TenDonViTinh";
+            this.Column3.HeaderText = "DVT";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
-            this.Column4.DataPropertyName = "DoanhThu";
-            this.Column4.HeaderText = "Doanh thu";
+            this.Column4.DataPropertyName = "SoLuong";
+            this.Column4.HeaderText = "Số lượng";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
-            this.Column5.DataPropertyName = "TyLe";
-            this.Column5.HeaderText = "Tỷ lệ";
+            this.Column5.DataPropertyName = "TenCachDung";
+            this.Column5.HeaderText = "Cách dùng";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
@@ -180,7 +180,7 @@
             this.dtpNgayXem.Size = new System.Drawing.Size(137, 20);
             this.dtpNgayXem.TabIndex = 2;
             // 
-            // FrmBaoCao
+            // FrmBaoCao_SuDungThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -188,9 +188,9 @@
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
-            this.Name = "FrmBaoCao";
+            this.Name = "FrmBaoCao_SuDungThuoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BÁO CÁO DOANH THU";
+            this.Text = "BÁO CÁO SỬ DỤNG THUỐC";
             this.Load += new System.EventHandler(this.FrmBaoCao_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -206,7 +206,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvData;
-       
+
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnXem1;

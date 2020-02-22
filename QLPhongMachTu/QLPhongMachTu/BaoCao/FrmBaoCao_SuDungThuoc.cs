@@ -11,11 +11,11 @@ using QLPhongMachTuBUS;
 
 namespace QLPhongMachTu
 {
-    public partial class FrmBaoCao : Form
+    public partial class FrmBaoCao_SuDungThuoc : Form
     {
         BaoCaoBUS bus = new BaoCaoBUS();
 
-        public FrmBaoCao()
+        public FrmBaoCao_SuDungThuoc()
         {
             InitializeComponent();
         }
@@ -30,7 +30,7 @@ namespace QLPhongMachTu
         private void btnXem1_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt = bus.BaoCao_DoanhThu_Month(dtpNgayXem.Value.Date);
+            dt = bus.BaoCao_SuDungThuoc_Month(dtpNgayXem.Value.Date);
 
             dgvData.DataSource = dt;
            

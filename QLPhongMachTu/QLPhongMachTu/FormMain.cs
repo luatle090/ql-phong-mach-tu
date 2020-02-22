@@ -95,5 +95,17 @@ namespace QLPhongMachTu
             FrmDSBenhNhanKhamTheoNgay frm = new FrmDSBenhNhanKhamTheoNgay();
             frm.ShowDialog();
         }
+
+        private void mnuDoanhThu_Click(object sender, EventArgs e)
+        {
+            FrmBaoCao frm = new FrmBaoCao();
+            frm.ShowDialog();
+        }
+
+        private void mnuSuDungThuoc_Click(object sender, EventArgs e)
+        {
+            FrmBaoCao_SuDungThuoc frm = new FrmBaoCao_SuDungThuoc();
+            frm.ShowDialog();
+        }
     }
 }

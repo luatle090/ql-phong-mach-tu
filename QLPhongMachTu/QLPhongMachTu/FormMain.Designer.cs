@@ -188,12 +188,14 @@
             this.mnuDoanhThu.Name = "mnuDoanhThu";
             this.mnuDoanhThu.Size = new System.Drawing.Size(230, 22);
             this.mnuDoanhThu.Text = "Báo cáo doanh thu theo ngày";
+            this.mnuDoanhThu.Click += new System.EventHandler(this.mnuDoanhThu_Click);
             // 
             // mnuSuDungThuoc
             // 
             this.mnuSuDungThuoc.Name = "mnuSuDungThuoc";
             this.mnuSuDungThuoc.Size = new System.Drawing.Size(230, 22);
             this.mnuSuDungThuoc.Text = "Báo cáo sử dụng thuốc";
+            this.mnuSuDungThuoc.Click += new System.EventHandler(this.mnuSuDungThuoc_Click);
             // 
             // mnuHeThong
             // 
