@@ -145,10 +145,17 @@ namespace QLPhongMachTu.DanhMuc
                 int i = dgvData.CurrentRow.Index;
                 int ID = Convert.ToInt32(dgvData.Rows[i].Cells["ColID"].Value.ToString());
 
-                bus.Delete(ID);
+                long re =  bus.Delete(ID);
 
-                LoadData();
-                MessageBox.Show("Thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(re > 0)
+                {
+                    LoadData();
+                    MessageBox.Show("Thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                { 
+                    MessageBox.Show("Đơn vị tính đã được sử dụng", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {

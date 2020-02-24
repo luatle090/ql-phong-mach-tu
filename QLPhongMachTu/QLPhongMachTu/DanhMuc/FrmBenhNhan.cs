@@ -170,10 +170,17 @@ namespace QLPhongMachTu.DanhMuc
                 int i = dgvData.CurrentRow.Index;
                 int ID = Convert.ToInt32(dgvData.Rows[i].Cells["ColID"].Value.ToString());
 
-                bnBUS.Delete(ID);
-
-                LoadData();
-                MessageBox.Show("Thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                long re = bnBUS.Delete(ID);
+                if(re > 0)
+                {
+                    LoadData();
+                    MessageBox.Show("Thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Bệnh nhân đã được khám", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+      
             }
             catch (Exception ex)
             {
