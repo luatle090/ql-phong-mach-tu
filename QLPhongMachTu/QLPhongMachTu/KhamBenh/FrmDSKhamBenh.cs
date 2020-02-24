@@ -56,7 +56,7 @@ namespace QLPhongMachTu
 
         private bool IsQuaSoLuongKham()
         {
-            if (dsBUS.SoLuongKhamTrongNgay(dtpNgayKham.Value.Date) > _soLuongKhamMax)
+            if (dsBUS.SoLuongKhamTrongNgay(dtpNgayKham.Value.Date) >= _soLuongKhamMax)
                 return true;
 
             return false;
