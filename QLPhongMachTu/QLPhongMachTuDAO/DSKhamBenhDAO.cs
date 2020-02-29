@@ -71,7 +71,7 @@ namespace QLPhongMachTuDAO
             str[2] = "@gioiTinh";
             str[3] = "@diaChi";
             str[4] = "@ngaySinh";
-            //str[5] = "@idBenhNhan";
+            str[5] = "@idBenhNhan";
             str[6] = "@idNhanVien";
 
             val[0] = _nv.id;
@@ -79,7 +79,7 @@ namespace QLPhongMachTuDAO
             val[2] = _nv.benhNhan.gioiTinh;
             val[3] = _nv.benhNhan.diaChi;
             val[4] = _nv.benhNhan.ngaySinh;
-            //val[5] = _nv.benhNhan.id;
+            val[5] = _nv.benhNhan.id;
             val[6] = _nv.idNhanVien;
 
             DataProvider dp = new DataProvider();

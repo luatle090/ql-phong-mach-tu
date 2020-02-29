@@ -131,9 +131,13 @@ namespace QLPhongMachTu
                 txtHoTen.Text = dgvData.Rows[i].Cells["ColHoTen"].Value.ToString();
                 txtDiaChi.Text = dgvData.Rows[i].Cells["ColDiaChi"].Value.ToString();
                 dtpNgaySinh.Value = (DateTime)dgvData.Rows[i].Cells["ColNgaySinh"].Value;
+                txtMa.Enabled = false;
 
-
-                chkNam.Checked = Convert.ToBoolean(dgvData.Rows[i].Cells["ColGioiTinh"].Value.ToString());
+                bool gioiTinh = Convert.ToBoolean(dgvData.Rows[i].Cells["ColGioiTinh"].Value.ToString());
+                if (gioiTinh)
+                    chkNam.Checked = true;
+                else
+                    chkNu.Checked = true;
 
             }
             catch (Exception ex)
@@ -145,6 +149,7 @@ namespace QLPhongMachTu
         private void btnXoaTrang_Click(object sender, EventArgs e)
         {
             ClearText();
+            txtMa.Enabled = true;
             txtMa.Focus();
         }
 
@@ -188,12 +193,15 @@ namespace QLPhongMachTu
             {
                 SearchDataBenhNhan(txtMa.Text.Trim());
             }
-
-            dsIndex.benhNhan.ma = txtMa.Text.Trim();
-            dsIndex.benhNhan.hoTen = txtHoTen.Text.Trim();
-            dsIndex.benhNhan.diaChi = txtDiaChi.Text.Trim();
-            dsIndex.benhNhan.ngaySinh = dtpNgaySinh.Value.Date;
-            dsIndex.benhNhan.gioiTinh = gioiTinh;
+            
+            if(dsIndex.benhNhan.id < 1 || _id > 0)
+            {
+                dsIndex.benhNhan.ma = txtMa.Text.Trim();
+                dsIndex.benhNhan.hoTen = txtHoTen.Text.Trim();
+                dsIndex.benhNhan.diaChi = txtDiaChi.Text.Trim();
+                dsIndex.benhNhan.ngaySinh = dtpNgaySinh.Value.Date;
+                dsIndex.benhNhan.gioiTinh = gioiTinh;
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -237,16 +245,31 @@ namespace QLPhongMachTu
             int ID = Convert.ToInt32(dgvData.Rows[i].Cells["ColID"].Value.ToString());
 
             Set_dsIndex(ID);
-            long re = dsBUS.Update(dsIndex);
+            BenhNhanBUS benhNhanBUS = new BenhNhanBUS();
+            long result = benhNhanBUS.Update(dsIndex.benhNhan);
 
-            if (re > 0)
+            if (result > 0)
             {
-                MessageBox.Show("Thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadData();
+                long re = dsBUS.Update(dsIndex);
+
+                if (re > 0)
+                {
+                    MessageBox.Show("Thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
+                }
+                else
+                {
+                    if (re == -2)
+                    {
+                        MessageBox.Show("Trùng mã", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                        MessageBox.Show("Không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                if (re == -2)
+                if (result == -2)
                 {
                     MessageBox.Show("Trùng mã", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -270,10 +293,17 @@ namespace QLPhongMachTu
                 int i = dgvData.CurrentRow.Index;
                 int ID = Convert.ToInt32(dgvData.Rows[i].Cells["ColID"].Value.ToString());
 
-                dsBUS.Delete(ID);
-               
-                LoadData();
-                MessageBox.Show("Thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Int64 result = dsBUS.Delete(ID);
+
+                if(result > 0)
+                {
+                    LoadData();
+                    MessageBox.Show("Thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Bệnh nhân đã được khám", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {

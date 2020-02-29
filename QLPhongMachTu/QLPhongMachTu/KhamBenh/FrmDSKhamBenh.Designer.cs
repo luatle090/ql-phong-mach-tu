@@ -151,7 +151,7 @@
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(75, 23);
             this.btnTim.TabIndex = 7;
-            this.btnTim.Text = "Tìm";
+            this.btnTim.Text = "Tìm DS";
             this.btnTim.UseVisualStyleBackColor = true;
             this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
