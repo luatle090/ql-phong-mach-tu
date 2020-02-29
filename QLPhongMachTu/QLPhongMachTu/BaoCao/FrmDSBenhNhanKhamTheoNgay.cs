@@ -32,7 +32,11 @@ namespace QLPhongMachTu
         {
             DataTable dt = new DataTable();
             dt = bus.LoadData(dtpNgayXem.Value.Date, false);
-
+            if(dt.Rows.Count < 1)
+            {
+                MessageBox.Show("Không tìm thấy thông tin", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             dgvData.Rows.Clear();
             for (int i = 0; i < dt.Rows.Count; i++)
             {

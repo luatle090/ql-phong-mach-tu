@@ -65,15 +65,18 @@ namespace QLPhongMachTu
 
         private void btnReload_Click(object sender, EventArgs e)
         {
-            LoadDataPhieuKhamBenh();
+            int rows = LoadDataPhieuKhamBenh();
+            if (rows < 1)
+                MessageBox.Show("Không tìm thấy", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void LoadDataPhieuKhamBenh()
+        private int LoadDataPhieuKhamBenh()
         {
             
             tb_DataPhieuKham = bus.LoadData(dtpNgayKham.Value.Date, false);
 
             dgvPhieuKham.DataSource = tb_DataPhieuKham;
+            return tb_DataPhieuKham.Rows.Count;
         }
 
         private void dgvPhieuKham_CurrentCellChanged(object sender, EventArgs e)

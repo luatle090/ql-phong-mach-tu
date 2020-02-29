@@ -33,9 +33,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpNgayXem = new System.Windows.Forms.DateTimePicker();
             this.btnXem1 = new System.Windows.Forms.Button();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.dtpNgayXem = new System.Windows.Forms.DateTimePicker();
             this.ColSTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNgayKham = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +52,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1183, 72);
+            this.panel1.Size = new System.Drawing.Size(795, 72);
             this.panel1.TabIndex = 2;
             // 
             // label1
@@ -62,7 +62,7 @@
             this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1183, 60);
+            this.label1.Size = new System.Drawing.Size(795, 60);
             this.label1.TabIndex = 1;
             this.label1.Text = "DANH SÁCH BỆNH NHÂN KHÁM THEO NGÀY";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -74,10 +74,19 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 72);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1183, 48);
+            this.groupBox1.Size = new System.Drawing.Size(795, 48);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Báo cáo doanh thu theo ngày";
+            this.groupBox1.Text = "Danh sách bệnh nhân khám theo ngày";
+            // 
+            // dtpNgayXem
+            // 
+            this.dtpNgayXem.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayXem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayXem.Location = new System.Drawing.Point(6, 22);
+            this.dtpNgayXem.Name = "dtpNgayXem";
+            this.dtpNgayXem.Size = new System.Drawing.Size(200, 20);
+            this.dtpNgayXem.TabIndex = 2;
             // 
             // btnXem1
             // 
@@ -112,17 +121,8 @@
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(1183, 410);
+            this.dgvData.Size = new System.Drawing.Size(795, 383);
             this.dgvData.TabIndex = 2;
-            // 
-            // dtpNgayXem
-            // 
-            this.dtpNgayXem.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayXem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayXem.Location = new System.Drawing.Point(6, 22);
-            this.dtpNgayXem.Name = "dtpNgayXem";
-            this.dtpNgayXem.Size = new System.Drawing.Size(200, 20);
-            this.dtpNgayXem.TabIndex = 2;
             // 
             // ColSTT
             // 
@@ -165,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1183, 530);
+            this.ClientSize = new System.Drawing.Size(795, 503);
             this.Controls.Add(this.dgvData);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
