@@ -13,11 +13,18 @@ Begin tran
 	begin try
 	set @resurlt= 0
 		
-		update PhieuKhamBenh
-		set TrieuChung = @trieuChung, IDDoanBenh = @idDoanBenh, IDNhanVien= @idNhanVien
-		where ID = @id
+		if Exists(select ID from HoaDonThanhToan where IDPhieu = @id)
+		begin
+			set @resurlt = -2
+		end
+		else
+		begin
+			update PhieuKhamBenh
+			set TrieuChung = @trieuChung, IDDoanBenh = @idDoanBenh, IDNhanVien= @idNhanVien
+			where ID = @id
 
-		set @resurlt= @id
+			set @resurlt= @id
+		end
 
 commit tran
 	end try

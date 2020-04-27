@@ -259,7 +259,7 @@ namespace QLPhongMachTu
             {
                 if (re == -2)
                 {
-                    MessageBox.Show("Trùng mã", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Thông tin đã được thanh toán! Không thể xóa!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                     MessageBox.Show("Không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -451,6 +451,7 @@ namespace QLPhongMachTu
         private void btnReload_Click(object sender, EventArgs e)
         {
             LoadDSBenhNhanKham();
+            LoadDataPhieuKhamBenh();
         }
     }
 }
