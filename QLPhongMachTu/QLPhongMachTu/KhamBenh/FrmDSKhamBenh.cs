@@ -160,6 +160,10 @@ namespace QLPhongMachTu
             txtMa.Text = "";
             txtHoTen.Text = "";
             txtDiaChi.Text = "";
+
+            
+            dsIndex.id = -1;
+            dsIndex.benhNhan.id = -1;
         }
 
         private bool ThieuDuLieu(bool isInsert)
@@ -193,9 +197,14 @@ namespace QLPhongMachTu
             {
                 SearchDataBenhNhan(txtMa.Text.Trim());
             }
-            
-            if(dsIndex.benhNhan.id < 1 || _id > 0)
+
+            if (dsIndex.benhNhan.id < 1 || _id > 0 || dsIndex.benhNhan.ma != txtMa.Text.Trim())
             {
+                if (dsIndex.benhNhan.ma != txtMa.Text.Trim())
+                {
+                    dsIndex.benhNhan.id = -1;
+                }
+
                 dsIndex.benhNhan.ma = txtMa.Text.Trim();
                 dsIndex.benhNhan.hoTen = txtHoTen.Text.Trim();
                 dsIndex.benhNhan.diaChi = txtDiaChi.Text.Trim();
