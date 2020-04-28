@@ -1,5 +1,5 @@
 
-Create PROC [dbo].[SP_ReadBaoCao_SuDungThuoc_Month]
+Alter PROC [dbo].[SP_ReadBaoCao_SuDungThuoc_Month]
 @month datetime
 AS
 BEGIN
@@ -16,5 +16,6 @@ set @nam = YEAR(@month)
 	inner join Thuoc as t on ct.IDThuoc = t.ID
 	inner join DonViTinh as dvt on ct.IDDonViThuoc = dvt.ID
 	inner join CachDung as cd on ct.IDCachDung = cd.ID
-
+	where MONTH(p.NgayKham) = @Thang and Year(p.NgayKham) = @Nam
+	group by t.TenThuoc, dvt.TenDonViTinh, ct.SoLuong, cd.TenCachDung
 END
